@@ -20,7 +20,7 @@
                         @foreach($tasks as $task)
                             <tr>
                                 <td scope="row">{{ $task->id }}</td>
-                                <td>{{ $task->title }}</td>
+                                <td><a href="{{ route('task.show',$task->id) }}">{{ $task->title }}</a></td>
                                 <td>{{ Str::limit($task->description, 50) }}</td>
                                 <td><?php echo $task->status == 1 ? '<span class="btn-submit"  data-id="'. $task->id .'"><i class="far fa-check-circle fa-2x"></i></span>' : '<span class="btn-submit"  data-id="'. $task->id .'"><i class="far fa-times-circle fa-2x"></i></span>' ?></td>
                                 <td>{{ $task->created_at }}</td>

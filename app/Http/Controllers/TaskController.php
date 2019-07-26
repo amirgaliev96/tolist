@@ -48,4 +48,9 @@ class TaskController extends Controller
             'status' => $task->status
         ];
     }
+    public function show($id)
+    {
+        $task = Task::find($id);
+        return view('task.show', compact('task'));
+    }
 }
